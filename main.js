@@ -5,7 +5,7 @@
  */
 
 const appRootObserverCallback = () => {
-  const groupItems = document.getElementsByClassName('list-group-item')
+  const groupItems = document.querySelectorAll('li.list-group-item:not(.list-group-item-action)')
   if (groupItems.length === 0) return
 
   appRootObserver.disconnect()
