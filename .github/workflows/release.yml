@@ -18,3 +18,9 @@ jobs:
 
       - name: Create Zip
         run: zip -r release.zip . -x ".git/*" ".github/*" ".gitignore" "README.md"
+
+      - name: Create GitHub Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "release.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
